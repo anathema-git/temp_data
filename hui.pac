@@ -8,15 +8,15 @@ function FindProxyForURL(url, host) {
         return proxy;
     }
 
-    // // Условие для ChatGPT
-    // if (dnsDomainIs(host, ".openai.com") || dnsDomainIs(host, ".chat.openai.com")) {
-    //     return proxy;
-    // }
-
-    // Условие для 2ip.ru
-    if (shExpMatch(url, "*://2ip.ru/*")) {
+    // Условие для ChatGPT
+    if (dnsDomainIs(host, ".openai.com") || dnsDomainIs(host, ".chat.openai.com")) {
         return proxy;
     }
+
+    // // Условие для 2ip.ru
+    // if (shExpMatch(url, "*://2ip.ru/*")) {
+    //     return proxy;
+    // }
 
     // Во всех других случаях прямое соединение
     return "DIRECT";
